@@ -1,5 +1,6 @@
 import Welcome from "./components/Welcome";
 import Comment from "./components/Comment";
+import Clock from "./components/Clock";
 
 const comment = {
   date: new Date(),
@@ -15,7 +16,8 @@ function App() {
     <div className="App">
       <Welcome name="june" />
       <h1>Hello, World</h1>
-      <Comment date={comment.date} text={comment.text} author={comment.author}/>
+      <Comment date={comment.date} text={comment.text} author={comment.author} />
+      <Clock />
     </div>
   );
 }
