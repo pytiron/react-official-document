@@ -9,6 +9,24 @@ export default class Clock extends Component {
     }
   }
 
+  // 컴포넌트 출력물이 DOM에 렌더링 된 후 에 실행됩니다.
+  componentDidMount() {
+    this.timerID = setInterval(() => {
+      this.tick()
+    }, 1000)
+
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID)
+  }
+
+  tick() {
+    this.setState({
+      date: new Date().toLocaleTimeString()
+    })
+  }
+
   render() {
     return (
       <div>
